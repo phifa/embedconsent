@@ -1,6 +1,6 @@
 {
   "name": "@phijufa/embedconsent",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Cookieconsent extension that toggles embeds from YouTube, Vimeo or Google Maps for better privacy. ",
   "main": "index.js",
   "scripts": {
