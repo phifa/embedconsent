@@ -1,0 +1,24 @@
+{
+  "name": "embedconsent",
+  "version": "1.0.0",
+  "description": "Cookieconsent extension that toggles embeds from YouTube, Vimeo or Google Maps for better privacy. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phifa/embedconsent.git"
+  },
+  "author": "phifa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phifa/embedconsent/issues"
+  },
+  "homepage": "https://github.com/phifa/embedconsent#readme",
+  "dependencies": {
+    "cookieconsent": "^3.1.0",
+    "foundation-sites": "^6.5.0-rc.2",
+    "get-video-id": "^3.1.0"
+  }
+}
