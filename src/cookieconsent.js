@@ -1,13 +1,9 @@
+import "./app.scss";
 import "cookieconsent/src/cookieconsent";
-import { embedconsent } from "./embedconsent";
-
-// Global Settings
-export let COOKIESTATUS = "unset";
-export let banner;
+import { embedconsent } from "@phijufa/embedconsent/src/embedconsent";
 
 // Initializing Cookieconsent
 window.addEventListener("load", function() {
-  embedconsent.init();
   window.cookieconsent.initialise(
     {
       palette: {
@@ -32,23 +28,20 @@ window.addEventListener("load", function() {
       },
       // If cookie has been set before
       onInitialise: function(status) {
-        COOKIESTATUS = status;
-        embedconsent.rerender();
+        embedconsent.rerender(status);
       },
       // When Cookie status changes
       onStatusChange: function(status) {
-        COOKIESTATUS = status;
-        embedconsent.rerender();
+        embedconsent.rerender(status);
       },
       // When revoking Cookie choise
       onRevokeChoice: function() {
-        COOKIESTATUS = "deny";
-        embedconsent.rerender();
+        embedconsent.rerender("deny");
       }
     },
     // Make Popup accessible from outside
     function(popup) {
-      banner = popup;
+      embedconsent.init(popup);
     }
   );
 });
