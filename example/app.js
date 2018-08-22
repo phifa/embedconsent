@@ -1,4 +1,3 @@
-import "./app.scss";
 import "cookieconsent/src/cookieconsent";
 import { embedconsent } from "@phijufa/embedconsent/src/embedconsent";
 
