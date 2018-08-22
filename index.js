@@ -1,1 +1,1 @@
-import "./src/cookieconsent";
+import "./src/embedconsent";
