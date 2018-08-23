@@ -1,6 +1,8 @@
 import 'cookieconsent/src/cookieconsent';
 import { embedconsent } from '@phijufa/embedconsent/src/embedconsent';
 
+let cookiestatus;
+
 // Initializing Cookieconsent
 window.addEventListener('load', function() {
   window.cookieconsent.initialise(
@@ -27,20 +29,23 @@ window.addEventListener('load', function() {
       },
       // If cookie has been set before
       onInitialise: function(status) {
-        embedconsent.rerender(status);
+        cookiestatus = status;
+        embedconsent.rerender(cookiestatus);
       },
       // When Cookie status changes
       onStatusChange: function(status) {
-        embedconsent.rerender(status);
+        cookiestatus = status;
+        embedconsent.rerender(cookiestatus);
       },
       // When revoking Cookie choise
       onRevokeChoice: function() {
-        embedconsent.rerender('deny');
+        cookiestatus = 'deny';
+        embedconsent.rerender(cookiestatus);
       },
     },
     // Make Popup accessible from outside
     function(popup) {
-      embedconsent.init(popup);
+      embedconsent.init(popup, cookiestatus);
     }
   );
 });
