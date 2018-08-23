@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/phifa/embedconsent#readme",
   "dependencies": {
-    "cookieconsent": "^3.1.0",
     "get-video-id": "^3.1.0"
   },
   "devDependencies": {
