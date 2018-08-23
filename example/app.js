@@ -1,29 +1,29 @@
-import "cookieconsent/src/cookieconsent";
-import { embedconsent } from "@phijufa/embedconsent/src/embedconsent";
+import 'cookieconsent/src/cookieconsent';
+import { embedconsent } from '@phijufa/embedconsent/src/embedconsent';
 
 // Initializing Cookieconsent
-window.addEventListener("load", function() {
+window.addEventListener('load', function() {
   window.cookieconsent.initialise(
     {
       palette: {
         popup: {
-          background: "#3c404d",
-          text: "#d6d6d6"
+          background: '#3c404d',
+          text: '#d6d6d6',
         },
         button: {
-          background: "transparent",
-          text: "#8bed4f",
-          border: "#8bed4f"
-        }
+          background: 'transparent',
+          text: '#8bed4f',
+          border: '#8bed4f',
+        },
       },
-      type: "opt-out",
+      type: 'opt-out',
       content: {
         message:
-          "Diese Website benutzt Cookies und stellt Verbindungen zu Drittanbietern her. Dabei kann die IP Adresse übertragen werden. Weitere Informationen:  ",
-        allow: "Zustimmen",
-        deny: "Ablehnen",
-        link: "Datenschutzerklärung",
-        href: "#"
+          'Diese Website benutzt Cookies und stellt Verbindungen zu Drittanbietern her. Dabei kann die IP Adresse übertragen werden. Weitere Informationen:  ',
+        allow: 'Zustimmen',
+        deny: 'Ablehnen',
+        link: 'Datenschutzerklärung',
+        href: '#',
       },
       // If cookie has been set before
       onInitialise: function(status) {
@@ -35,8 +35,8 @@ window.addEventListener("load", function() {
       },
       // When revoking Cookie choise
       onRevokeChoice: function() {
-        embedconsent.rerender("deny");
-      }
+        embedconsent.rerender('deny');
+      },
     },
     // Make Popup accessible from outside
     function(popup) {
