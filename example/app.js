@@ -1,5 +1,6 @@
 import 'cookieconsent/src/cookieconsent';
 import { embedconsent } from '@phijufa/embedconsent/src/embedconsent';
+import './style.scss';
 
 let cookiestatus;
 
@@ -21,10 +22,10 @@ window.addEventListener('load', function() {
       type: 'opt-out',
       content: {
         message:
-          'Diese Website benutzt Cookies und stellt Verbindungen zu Drittanbietern her. Dabei kann die IP Adresse übertragen werden. Weitere Informationen:  ',
-        allow: 'Zustimmen',
-        deny: 'Ablehnen',
-        link: 'Datenschutzerklärung',
+          'This site uses cookies for analytics and personalized content. It also embeds external third-party content. More information:  ',
+        allow: 'Agree',
+        deny: 'Decline',
+        link: 'Privacy Statement',
         href: '#',
       },
       // If cookie has been set before
