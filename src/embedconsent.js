@@ -33,19 +33,18 @@ class Embedconsent {
    * @private
    */
   _events() {
-    const obj = this;
     // Button: Open External Link
-    this.embedconsentExternbutton.addEventListener('click', function() {
-      const { id, service } = getVideoId(obj.options.src);
+    this.embedconsentExternbutton.addEventListener('click', () => {
+      const { id, service } = getVideoId(this.options.src);
       let url;
-      if (obj.options.link) {
-        url = obj.options.link;
+      if (this.options.link) {
+        url = this.options.link;
       } else {
         if (service === 'youtube') {
           url = `https://www.youtube.com/watch?v=${id}`;
         } else if (service === 'vimeo') {
           url = `https://vimeo.com/${id}`;
-        } else if (obj.options.src.includes('maps')) {
+        } else if (this.options.src.includes('maps')) {
           alert('Please provide a data-link in your code.');
         } else {
           alert('Embed service not supported');
@@ -54,16 +53,16 @@ class Embedconsent {
       if (url) window.open(url, '_blank');
     });
     // Button: Revoke Consent
-    this.embedconsentRevokebutton.addEventListener('click', function() {
-      obj.banner.element.classList.add('embedconsent__ccbanner--shake');
+    this.embedconsentRevokebutton.addEventListener('click', () => {
+      this.banner.element.classList.add('embedconsent__ccbanner--shake');
       setTimeout(() => {
-        obj.banner.element.classList.remove('embedconsent__ccbanner--shake');
+        this.banner.element.classList.remove('embedconsent__ccbanner--shake');
       }, 500);
-      obj.banner.revokeChoice();
+      this.banner.revokeChoice();
     });
     // Window: Set Overlay Size when Screen is resized
-    window.addEventListener('resize', function() {
-      obj._setOverlaySize();
+    window.addEventListener('resize', () => {
+      this._setOverlaySize();
     });
   }
 
